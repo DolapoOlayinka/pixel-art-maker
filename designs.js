@@ -32,14 +32,6 @@ sizePicker.addEventListener('submit', function makeGrid(event) {
     }
     // When size is submitted by the user, prevent page from refreshing which is the default function
     event.preventDefault();
-
-    //To reset grid to blank slate
-    function resetGrid(rows) {
-        rows.forEach( function(row) {
-            row.remove();
-        });
-    }
-    resetGrid();
 });
 
 // when a grid cell is clicked, change background color to the chosen color in the color wheel
