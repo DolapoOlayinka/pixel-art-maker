@@ -21,11 +21,11 @@ sizePicker.addEventListener('submit', function makeGrid(event) {
     gridCanvas.innerHTML = ' ';
 
     //loop through table rows and columns to create grid
-    for (let row = 1; row <= gridWidth.value; row++) {
+    for (let row = 1; row <= gridHeight.value; row++) {
         let rows = document.createElement('tr');
         gridCanvas.appendChild(rows);
 
-        for (let column = 1; column <= gridHeight.value; column++) {
+        for (let column = 1; column <= gridWidth.value; column++) {
             let columns = document.createElement('td');
             rows.appendChild(columns);
         }
@@ -34,10 +34,9 @@ sizePicker.addEventListener('submit', function makeGrid(event) {
     event.preventDefault();
 
     //To reset grid to blank slate
-    function resetGrid() {
-        rows.forEach( function(row,column) {
+    function resetGrid(rows) {
+        rows.forEach( function(row) {
             row.remove();
-            column.remove();
         });
     }
     resetGrid();
